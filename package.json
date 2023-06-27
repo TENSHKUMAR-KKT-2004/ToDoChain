@@ -1,0 +1,21 @@
+{
+  "name": "todochain",
+  "version": "1.0.0",
+  "description": "Blockchain TODO App",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "TENSHKUMAR K",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^3.1.0",
+    "lite-server": "^2.6.1",
+    "nodemon": "^2.0.22"
+  }
+}
