@@ -8,6 +8,8 @@ contract(ToDoList,(accounts)=>{
         this.todoList = await ToDoList.deployed()
     })
 
+
+    // testing the data
     it('deploys successfully',async ()=>{
         const address = await this.todoList.address
 
@@ -17,5 +19,16 @@ contract(ToDoList,(accounts)=>{
         assert.notEqual(address,null)
         assert.notEqual(address,undefined)
 
+    })
+
+    it('lists tasks',async()=>{
+        const taskCount = await this.todoList.taskCount()
+        const task = await this.todoList.tasks(taskCount)
+
+        // testing the each and every datas
+        assert.equal(task.id.toNumber(),taskCount.toNumber())
+        assert.equal(task.content, 'Welcome to ToDoChain App !')
+        assert.equal(task.completed,false)
+        assert.equal(taskCount.toNumber(),1)
     })
 })
