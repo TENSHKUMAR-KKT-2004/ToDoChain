@@ -20,6 +20,7 @@
     }
     #account {
       color: #fff;
+      font-weight: bolder;
     }
     #loader {
       margin-top: 2rem;
@@ -57,6 +58,9 @@
       color: #101010;
       font-weight: bold;
     }
+    #content {
+        display: none;
+    }
     .list-unstyled {
       list-style-type: none;
       padding: 0;
@@ -76,8 +80,8 @@
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="https://github.com/TENSHKUMAR-KKT-2004" target="_blank">KKT | TodoChain App</a>
     <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
-        <small><a class="nav-link" href="#"><span id="account"></span></a></small>
+      <li class="nav-item d-sm-block">
+        <a class="nav-link" href="#"><span id="account"></span></a>
       </li>
     </ul>
   </nav>
@@ -89,22 +93,22 @@
             <span class="sr-only"></span>
           </div>
         </div>
-        <!-- <div id="content">
-          <form onSubmit="App.createTask(); return false;">
+        <div id="content">
+          <!-- <form onSubmit="App.createTask(); return false;">
             <input id="newTask" type="text" class="form-control" placeholder="Add task..." required>
             <input type="submit" hidden="">
-          </form>
+          </form> -->
           <ul id="taskList" class="list-unstyled">
-            <li class="taskTemplate">
+            <li class="taskTemplate" style="display: none">
               <label>
                 <input type="checkbox" />
-                <span class="content">Task content goes here...</span>
+                <span class="content"></span>
               </label>
             </li>
           </ul>
           <ul id="completedTaskList" class="list-unstyled">
           </ul>
-        </div> -->
+        </div>
       </main>
     </div>
   </div>
@@ -112,7 +116,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
-  
+  <script src='https://cdn.jsdelivr.net/npm/truffle-contract@4.0.21/dist/truffle-contract.js'></script>
   <script src="./app.js"></script>
 </body>
 </html>
