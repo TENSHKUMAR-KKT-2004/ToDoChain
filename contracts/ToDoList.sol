@@ -1,4 +1,4 @@
-//SDPX-License-Identifier: MIT
+//SPDX-License-Identifier:MIT
 pragma solidity ^0.8.19;
 
 contract ToDoList{
@@ -13,6 +13,12 @@ contract ToDoList{
 
     mapping(uint => Task) public tasks;
 
+    event TaskCompleted(
+        uint id,
+        string content,
+        bool completed
+    );
+
     constructor() public{
         createTask("Welcome to ToDoChain App !");
     }
@@ -20,5 +26,6 @@ contract ToDoList{
     function createTask(string memory _content) public{
         taskCount++;
         tasks[taskCount] = Task(taskCount,_content,false);
+        emit TaskCompleted(taskCount, _content, false);
     }
 }

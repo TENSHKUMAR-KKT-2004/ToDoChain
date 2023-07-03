@@ -31,4 +31,18 @@ contract(ToDoList,(accounts)=>{
         assert.equal(task.completed,false)
         assert.equal(taskCount.toNumber(),1)
     })
+
+    it('creates tasks',async()=>{
+        const result = await this.todoList.createTask('New task')
+        const taskCount = await this.todoList.taskCount()
+        assert.equal(taskCount.toNumber(),2)
+
+        // show the transaction result of the new insertion in smart contract
+        console.log(result)
+        // get the emitted events values from log record of this transaction 
+        const event = result.logs[0].args
+        assert.equal(event.id.toNumber(),2)
+        assert.equal(event.content,'New task')
+        assert.equal(event.completed,false)
+    })
 })
