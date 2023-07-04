@@ -105,7 +105,7 @@ App = {
         newTaskTemplate.find('input')
                           .prop('name',taskId)
                           .prop('checked',taskCompleted)
-                          // .on('click',App.toggleCompleted)
+                          .on('click',App.toggleCompleted)
 
         // append the new document obj into html page
         if(taskCompleted){
@@ -123,6 +123,13 @@ App = {
     App.setLoading(true)
     const content = $('#newTask').val()
     await App.todoList.createTask(content,{ from: App.account })
+    window.location.reload()
+  },
+
+  toggleCompleted:async (e)=>{
+    App.setLoading(true)
+    const taskId = e.target.name
+    await App.todoList.toggleCompleted(taskId,{ from: App.account })
     window.location.reload()
   },
 
